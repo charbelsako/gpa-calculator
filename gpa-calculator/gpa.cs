@@ -56,5 +56,12 @@ namespace gpa_calculator
             query = "INSERT INTO student(id, name) VALUES(\'"+Id+"\', \'"+Name+"\')";
             Db.Insert(query);
         }
+
+        private void AddGrade_Click(object sender, EventArgs e)
+        {
+            AddCourseGrade n = new AddCourseGrade();
+            Hide();
+            n.Show();
+        }
     }
 }

@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCourseGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCourseGrade.Designer.cs">
+      <DependentUpon>AddCourseGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="gpa.cs">
       <SubType>Form</SubType>

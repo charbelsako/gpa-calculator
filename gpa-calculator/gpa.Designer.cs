@@ -130,6 +130,7 @@
             this.AddGrade.TabIndex = 9;
             this.AddGrade.Text = "Add new grade";
             this.AddGrade.UseVisualStyleBackColor = true;
+            this.AddGrade.Click += new System.EventHandler(this.AddGrade_Click);
             // 
             // gpa
             // 
