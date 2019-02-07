@@ -60,7 +60,6 @@ namespace gpa_calculator
         private void AddGrade_Click(object sender, EventArgs e)
         {
             AddCourseGrade n = new AddCourseGrade();
-            Hide();
             n.Show();
         }
     }
