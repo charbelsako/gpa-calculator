@@ -41,20 +41,27 @@ namespace gpa_calculator
             query = "SELECT * FROM grade";
             grades = Db.GetData(query);
 
+            
             ComboBox[] CourseCombos = new ComboBox[] { Course1, Course2, Course3 };
             ComboBox[] GradeCombos = new ComboBox[] { Grade1, Grade2, Grade3 };
 
             foreach (ComboBox box in CourseCombos)
             {
+                // Seperating each combobox to an instance of the data.
+                DataTable TempCourses = courses.Copy();
+
                 box.DisplayMember = "title";
                 box.ValueMember = "id";
-                box.DataSource = courses;
+                box.DataSource = TempCourses;
             }
 
             foreach (ComboBox box in GradeCombos)
             {
+                // Seperating each combobox to an instance of the data.
+                DataTable TempGrades = grades.Copy();
+
                 box.ValueMember = "value";
-                box.DataSource = grades;
+                box.DataSource = TempGrades;
             }
 
 
@@ -140,8 +147,20 @@ namespace gpa_calculator
 
         private void SaveCourses()
         {
-            string query = "";
-            Db.Insert(query);
+
+            for (int i = 1; i <= NumCourses; i++)
+            {
+                ComboBox co = (ComboBox)Controls["Course" + i];
+                ComboBox gr = (ComboBox)Controls["Grade" + i];
+
+                object c = co.SelectedValue; // CSC201
+                object g = gr.SelectedValue; // 3.5
+                object ig = gr.SelectedIndex;
+
+                string query = "INSERT INTO course_grade(course_id, student_id, grade_id, semester_id) VALUES (\'"+c+"\',\'"+StudentId+"\',\'"+ig+"\','201820')";
+                Db.Insert(query);
+
+            }
         }
 
         private void CalcGPA_Click(object sender, EventArgs e)
@@ -150,6 +169,9 @@ namespace gpa_calculator
             label3.Text = gpa.ToString();
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveCourses();
+        }
     }
 }

@@ -39,6 +39,7 @@
             this.AddCourse = new System.Windows.Forms.Button();
             this.CalcGPA = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Course1
@@ -148,11 +149,22 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "label3";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 306);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 47);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Save Grades";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddCourseGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 366);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CalcGPA);
             this.Controls.Add(this.AddCourse);
@@ -185,5 +197,6 @@
         private System.Windows.Forms.Button AddCourse;
         private System.Windows.Forms.Button CalcGPA;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
