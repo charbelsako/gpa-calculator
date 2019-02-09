@@ -28,8 +28,14 @@ namespace gpa_calculator
 
         }
 
+
+        /// <summary>
+        /// Gets the cumulative gpa of a student
+        /// </summary>
+        /// 
         private void GetGPA()
         {
+            // Get Old Classes that the user has submitted before
             // Get the user's gpa
             string query = "";
             DataTable result = Db.GetData(query);
@@ -60,7 +66,17 @@ namespace gpa_calculator
         private void AddGrade_Click(object sender, EventArgs e)
         {
             AddCourseGrade n = new AddCourseGrade();
+            n.StudentId = StudentId.Text;
             n.Show();
+        }
+
+        private void StudentId_TextChanged(object sender, EventArgs e)
+        {
+            
+            if(StudentId.Text.Length >= 8)
+            {
+                AddGrade.Enabled = true;
+            }
         }
     }
 }

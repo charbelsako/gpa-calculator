@@ -101,6 +101,7 @@
             this.StudentId.Name = "StudentId";
             this.StudentId.Size = new System.Drawing.Size(173, 20);
             this.StudentId.TabIndex = 6;
+            this.StudentId.TextChanged += new System.EventHandler(this.StudentId_TextChanged);
             // 
             // StudentIdLabel
             // 
@@ -124,6 +125,7 @@
             // 
             // AddGrade
             // 
+            this.AddGrade.Enabled = false;
             this.AddGrade.Location = new System.Drawing.Point(327, 43);
             this.AddGrade.Name = "AddGrade";
             this.AddGrade.Size = new System.Drawing.Size(224, 45);
